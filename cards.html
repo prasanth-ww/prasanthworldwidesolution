@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html>
+
+<style>
+    :root {
+  --surface-color: white;
+  --curve: 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {      
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+   d:path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: (rgb(118, 231, 244) 106, 104);
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: rgb(54, 165, 213);  
+}
+
+.card__status {
+  font-size: .8em;
+  color: rgb(54, 165, 213);
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: rgb(54, 165, 213);
+  font-family: "MockFlowFont";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}    
+.button{
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #4070f4;
+  color: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-left: 40%;
+ 
+}
+.button:hover{
+  color: white;
+
+}
+
+</style>
+<body>
+<ul class="cards">
+    <li>
+      <a href="" class="card">
+        <img src="./images/cons.jpg" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <img class="card__thumb" src="./images/person.jpg" alt="" />
+            <div class="card__header-text">
+              <h3 class="card__title">Construction Work</h3>            
+              <span class="card__status">intermediate</span>
+            </div>
+          </div>
+          <p class="card__description">If you are a Constuction worker seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+        </div>
+      </a>      
+    </li>
+    <li>
+      <a href="" class="card">
+        <img src="./images/labourer.jpg" class="card__image" alt="" />
+        <div class="card__overlay">        
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+            <img class="card__thumb" src="./images/person.jpg" alt="" />
+            <div class="card__header-text">
+              <h3 class="card__title">General Works</h3>
+              <span class="card__status">intermediate</span>
+            </div>
+          </div>
+          <p class="card__description">If you are a general worker seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="card">
+        <img src="./images/factorylab.jpg" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <img class="card__thumb" src="./images/person.jpg" alt="" />
+            <div class="card__header-text">
+              <h3 class="card__title">Factory labour</h3>
+              <span class="card__tagline"></span>            
+              <span class="card__status">intermediate</span>
+            </div>
+          </div>
+          <p class="card__description">If you are a factory labour seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="" class="card">
+        <img src="./images/driving.jpg" class="card__image" alt="" />
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+            <img class="card__thumb" src="./images/person.jpg" alt="" />
+            <div class="card__header-text">
+              <h3 class="card__title">Driving works</h3>
+              <span class="card__status">advanced</span>
+            </div>          
+          </div>
+          <p class="card__description">If you are a Driver seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+        </div>
+      </a>
+    </li>    
+    <li>
+        <a href="" class="card">
+          <img src="./images/form.jpg" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+              <img class="card__thumb" src="./images/person.jpg" alt="" />
+              <div class="card__header-text">
+                <h3 class="card__title">form worker</h3>            
+                <span class="card__status">beginner</span>
+              </div>
+            </div>
+            <p class="card__description">Form Worker</p>
+          </div>
+        </a>      
+      </li>
+      <li>
+        <a href="" class="card">
+          <img src="./images/mason.jpg" class="card__image" alt="" />
+          <div class="card__overlay">        
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+              <img class="card__thumb" src="./images/person.jpg" alt="" />
+              <div class="card__header-text">
+                <h3 class="card__title">Mason</h3>
+                <span class="card__status">Intermediate</span>
+              </div>
+            </div>
+            <p class="card__description">If you are Mason worker seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="" class="card">
+          <img src="./images/plumber.jpg" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+              <img class="card__thumb" src="./images/person.jpg" alt="" />
+              <div class="card__header-text">
+                <h3 class="card__title">Plumber</h3>
+                <span class="card__tagline">plumber</span>            
+                <span class="card__status">Advanced</span>
+              </div>
+            </div>
+            <p class="card__description">If you are a plumber seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="" class="card">
+          <img src="./images/welder.jpg" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+              <img class="card__thumb" src="./images/person.jpg" alt="" />
+              <div class="card__header-text">
+                <h3 class="card__title">welder</h3>
+                <span class="card__status">intermediate</span>
+              </div>          
+            </div>
+            <p class="card__description">If you are a Welder seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+          </div>
+        </a>
+      </li>     <li>
+        <a href="" class="card">
+          <img src="./images/carpenter.jpg" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+              <img class="card__thumb" src="./images/person.jpg" alt="" />
+              <div class="card__header-text">
+                <h3 class="card__title">Carpenter</h3>            
+                <span class="card__status">advanced</span>
+              </div>
+            </div>
+            <p class="card__description">If you are a carpenter seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+          </div>
+        </a>      
+      </li>
+      <li>
+        <a href="" class="card">
+          <img src="./images/electrician.jpg" class="card__image" alt="" />
+          <div class="card__overlay">        
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+              <img class="card__thumb" src="./images/person.jpg" alt="" />
+              <div class="card__header-text">
+                <h3 class="card__title">Electrician</h3>
+                <span class="card__status">Advanced</span>
+              </div>
+            </div>
+            <p class="card__description">If you are a Electrician seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="" class="card">
+          <img src="./images/tecnical.jpg" class="card__image" alt="" />
+          <div class="card__overlay">
+            <div class="card__header">
+              <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+              <img class="card__thumb" src="./images/person.jpg" alt="" />
+              <div class="card__header-text">
+                <h3 class="card__title">Technical works</h3>
+                <span class="card__tagline"></span>            
+                <span class="card__status">in all level</span>
+              </div>
+            </div>
+            <p class="card__description">If you are a Technical worker seeking work opportunities abroad, please feel free to contact me. I can assist you with the necessary information and guidance</p>
+          </div>
+        </a>
+      </li>
+     
+  </ul>
+  <a class="button" href="index.html" style="text-decoration: none;">Back to Home</a>
+</body>
+</html>
